@@ -81,7 +81,7 @@ select {
 /* Global Variables */
 * {
   --primary: #000;
-  --primary-container: #EDC33D;
+  --primary-container: #edc33d;
 
   /* --secondary: #625b71;
   --on-secondary: #fff;
@@ -152,7 +152,7 @@ nav h1 {
 }
 
 .menu .links {
-  background-color: #EDC33D;
+  background-color: #edc33d;
   position: absolute;
   right: 0;
   width: 100vw;
@@ -434,7 +434,7 @@ footer {
   display: block;
   color: #000;
   font-weight: bold;
-  background-color: #EDC33D;
+  background-color: #edc33d;
 
   padding: 12px 14px;
   border-radius: 50px;
@@ -486,6 +486,44 @@ section .header {
   padding: 0 var(--col-1);
 }
 
+/*----------Extending panels---------*/
+.extend-container {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.7s ease-in;
+
+  height: 100px;
+}
+
+/* .panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+} */
+.panel.active {
+  height: 400px;
+}
+/* .panel .active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+} */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -553,6 +591,24 @@ section .header {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 900px) {
+  .extend-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .panel {
+    height: 500px;
+    /* width: 50px; */
+    flex: 0.5;
+  }
+
+  .panel.active {
+    height: auto;
+    flex: 5;
+  }
+}
 @media only screen and (min-width: 992px) {
   /*---------Header----------*/
   header {
